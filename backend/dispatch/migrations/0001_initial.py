@@ -5,21 +5,42 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('authentication', '0001_initial'),
-        ('orders', '0001_initial'),
+        ("authentication", "0001_initial"),
+        ("orders", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Dispatch',
+            name="Dispatch",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('driver', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='dispatch_driver', to='authentication.driver')),
-                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='dispatch_order', to='orders.order')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "driver",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="dispatch_driver",
+                        to="authentication.driver",
+                    ),
+                ),
+                (
+                    "order",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="dispatch_order",
+                        to="orders.order",
+                    ),
+                ),
             ],
         ),
     ]

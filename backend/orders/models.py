@@ -6,16 +6,16 @@ class Order(models.Model):
     "Generated Model"
     customer = models.ForeignKey(
         "authentication.Customer",
-        on_delete=models.CASCADE,
         null=False,
         blank=False,
+        on_delete=models.CASCADE,
         related_name="order_customer",
     )
     restaurant = models.ForeignKey(
         "restaurants.Restaurant",
-        on_delete=models.CASCADE,
         null=False,
         blank=False,
+        on_delete=models.CASCADE,
         related_name="order_restaurant",
     )
     items = models.JSONField()

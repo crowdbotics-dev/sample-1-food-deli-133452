@@ -5,21 +5,35 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('orders', '0001_initial'),
+        ("orders", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Cancellation',
+            name="Cancellation",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('reason', models.TextField()),
-                ('refund_issued', models.BooleanField()),
-                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='cancellation_order', to='orders.order')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("reason", models.TextField()),
+                ("refund_issued", models.BooleanField()),
+                (
+                    "order",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="cancellation_order",
+                        to="orders.order",
+                    ),
+                ),
             ],
         ),
     ]

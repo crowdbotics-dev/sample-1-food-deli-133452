@@ -10,9 +10,9 @@ class Restaurant(models.Model):
     description = models.TextField()
     menu = models.JSONField()
     images = models.ImageField(
-        upload_to="restaurant_images/",
         null=True,
         blank=True,
+        upload_to="restaurant_images/",
     )
 
 

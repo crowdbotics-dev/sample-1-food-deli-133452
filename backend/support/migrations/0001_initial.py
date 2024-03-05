@@ -5,21 +5,44 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('authentication', '0001_initial'),
+        ("authentication", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ChatSession',
+            name="ChatSession",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('messages', models.JSONField()),
-                ('customer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='chatsession_customer', to='authentication.customer')),
-                ('driver', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='chatsession_driver', to='authentication.driver')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("messages", models.JSONField()),
+                (
+                    "customer",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="chatsession_customer",
+                        to="authentication.customer",
+                    ),
+                ),
+                (
+                    "driver",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="chatsession_driver",
+                        to="authentication.driver",
+                    ),
+                ),
             ],
         ),
     ]

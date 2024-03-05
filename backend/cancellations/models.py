@@ -6,9 +6,9 @@ class Cancellation(models.Model):
     "Generated Model"
     order = models.ForeignKey(
         "orders.Order",
-        on_delete=models.CASCADE,
         null=False,
         blank=False,
+        on_delete=models.CASCADE,
         related_name="cancellation_order",
     )
     reason = models.TextField()
